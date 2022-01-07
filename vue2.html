@@ -1,0 +1,42 @@
+<!-- 参考 code/2/1-import-cdn.html 文件 -->
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Vue直接引入Script资源</title>
+    <!-- 引入 CDN 资源 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <h1>当前计数: {{counter}}</h1>
+<br>
+<button v-on:click="add()">+</button>
+<button v-on:click="sub()">-</button>
+</div>
+<script>
+    // 初始化 Vue 实例
+    app=new Vue({
+        el: "#app",
+        data() {
+            return {
+                counter: 0
+            };
+        },
+        methods:{
+            add(){
+              this.counter++
+              console.log("add")
+            },
+            sub(){
+            this.counter--
+            console.log("sub")
+
+
+            }
+        },
+    });
+</script>
+</body>
+</html>
