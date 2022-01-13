@@ -1,0 +1,29 @@
+<!-- 参考 code/2/1-import-cdn.html 文件 -->
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Vue直接引入Script资源</title>
+    <!-- 引入 CDN 资源 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <a v-bind:href=test_url>百度一下</a>
+</div>
+
+<script>
+    // 初始化 Vue 实例
+    new Vue({
+        el: "#app",
+        data() {
+            return {
+                message: "hello",
+                test_url: "http://www.baidu.com"
+            };
+        }
+    });
+</script>
+</body>
+</html>
