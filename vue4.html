@@ -1,0 +1,43 @@
+<!-- 参考 code/2/1-import-cdn.html 文件 -->
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Vue直接引入Script资源</title>
+    <!-- 引入 CDN 资源 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <style>
+        .ook{
+            color:red;
+        }
+    </style>
+</head>
+<body>
+
+
+<div id="app">
+    <ul>
+        <!-- 点击事件发生后，相应选项变红 -->
+        <li v-for="(m ,index) in movies" :class="{ook:clickindex===index}" v-on:click="newclassname(index)">{{m}}</li>
+    </ul>
+</div>
+
+<script>
+    // 初始化 Vue 实例
+    new Vue({
+        el: "#app",
+        data:{
+            clickindex:-1,
+            movies: ['Tom and Jerry','Apolo','Universe','Dream']
+        },
+        methods:{
+            newclassname(index){
+                this.clickindex = index;
+            }
+        },
+    });
+</script>
+</body>
+</html>
