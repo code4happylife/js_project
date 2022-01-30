@@ -1,0 +1,63 @@
+<!-- 参考 code/2/1-import-cdn.html 文件 -->
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Vue直接引入Script资源</title>
+    <!-- 引入 CDN 资源 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+</head>
+<body>
+
+
+<div id="app">
+    <h1>{{message}}</h1>
+    <cop1></cop1>
+    <el-test></el-test>
+    <el-box></el-box>
+    <multiple-components></multiple-components>
+    <component2></component2>
+</div>
+
+<script>
+
+    Vue.component('cop1',{
+        template:'<div>cop1组件中的内容</div>'
+    })
+
+    Vue.component('el-test',{
+        template:'<div>el-test组件中的内容</div>'
+    })
+
+    Vue.component('el-box',{
+        template:'<div><cop1></cop1></div>'
+    })
+
+    <!--全局组件-->
+    Vue.component('multiple-components',{
+        template:`<div>
+        <cop1></cop1>
+        <el-test></el-test>
+        </div>`
+    })
+
+    // 初始化 Vue 实例
+    new Vue({
+        el: "#app",
+        data:{
+            message:"组件化开发"
+        },
+        components:{
+            'component2':{
+                template:`<div>
+            <h1>Every thing is fine !</h1>
+            </div>`
+            }
+        },
+    });
+</script>
+</body>
+</html>
