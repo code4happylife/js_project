@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>test</title>
+	<script type="text/javascript">
+	window.onload=function(){
+var str = document.getElementsByTagName("div")[0].innerHTML; 
+console.log(str)
+var txt = str.replace(/NICE/,"<font color='green'>NICE</font>");
+console.log(txt)
+document.getElementsByTagName("div")[0].innerHTML = txt;
+var str = document.getElementsByTagName("div")[0].innerHTML; 
+var txt1 = str.replace(/BAD/,"<font color='red'>BAD</font>");
+console.log(txt1)
+document.getElementsByTagName("div")[0].innerHTML = txt1;
+}
+
+/**
+console log:
+Running at least three times a week is surely NICE. <br>
+Eating too much fat food is surely BAD. <br> 
+test1.html:10 Running at least three times a week is surely <font color='green'>NICE</font>. <br>
+Eating too much fat food is surely BAD. <br> 
+test1.html:14 Running at least three times a week is surely <font color="green">NICE</font>. <br>
+Eating too much fat food is surely <font color='red'>BAD</font>. <br> 
+*/
+</script>
+</head>
+<body>
+
+<div>Running at least three times a week is surely NICE. <br>
+Eating too much fat food is surely BAD. <br> </div>
+</body>
+
+</script>
+</body>
+</html>
