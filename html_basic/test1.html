@@ -6,11 +6,11 @@
 	window.onload=function(){
 var str = document.getElementsByTagName("div")[0].innerHTML; 
 console.log(str)
-var txt = str.replace(/NICE/,"<font color='green'>NICE</font>");
+var txt = str.replace(/NICE/g,"<font color='green'>NICE</font>");
 console.log(txt)
 document.getElementsByTagName("div")[0].innerHTML = txt;
 var str = document.getElementsByTagName("div")[0].innerHTML; 
-var txt1 = str.replace(/BAD/,"<font color='red'>BAD</font>");
+var txt1 = str.replace(/BAD/g,"<font color='red'>BAD</font>");
 console.log(txt1)
 document.getElementsByTagName("div")[0].innerHTML = txt1;
 }
