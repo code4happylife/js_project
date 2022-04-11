@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<!-- 注释的添加 ctrl+/ -->
+		<!-- 文字：标题标签 -->
+		<h1>一级标题</h1>
+		<hr>
+		<h2>二级标题</h2>
+		<h3>这是标题h3</h3>
+		<!-- 段落标签 -->
+		<p>南海之滨，<br>千帆竞发</p>
+		
+		<p>春潮拍岸</p>
+		<p>IDC近日公布数据显示，2021年全球AR/VR头显出货量1123万台，同比增长92.1%。其中VR头显出货量达1095万台，突破年出货量1000万台的行业重要拐点。IDC预计2022年将达到1573万台，同比增长43.6%。
+</p>
+		<!-- 换行符<br> 非闭合标签-->
+		<!-- 分割线 <hr> 非闭合标签 -->
+		<hr>
+		<!-- 块元素，可以设置高度和宽度，独占一行
+		行内元素：不可以设置高度和宽度（一行可以显示多个）
+		行内块元素：可以设置高度和宽度（一行可以显示多个）
+		display: inline-block;行内块元素
+		display: block;块元素
+		display: inline;行内元素
+		 
+		 -->
+		 <!-- 块元素:div -->
+		<div style="height: 100px;background-color: red;">123</div>
+		<div style="height: 100px;background-color: blue;">123</div>
+		
+		<hr>
+		<!-- 行内元素：span -->
+		<span style="background-color: yellow;height: 50px;">这是span1</span>
+		<span style="background-color: cadetblue;height: 80px;width: 100px;">这是span2</span>
+		<hr>
+		<!-- 行内块元素 -->
+		<span style="background-color: yellow;height: 150px;display: inline-block;">这是span1</span>
+		<span style="background-color: cadetblue;height: 80px;width: 150px;">这是span2</span>
+		
+		<hr>
+		<p>
+			<!-- 字体加粗：b -->
+			<b>2021年<i>全球AR/VR头显出货量</i></b>，2021年全球AR/VR头显出货量1123万台。
+			<!-- i倾斜 -->
+			<i>python</i>
+			<span>python</span>
+			
+		</p>
+		<hr>
+		<!-- 图像标签：img
+		 src:设置图片地址
+		 width:宽度
+		 height:高度
+		 
+		 -->
+		<img src="https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png" alt="百度一下" width="150px" height="150px">
+		<img src="./test.png" alt="">
+		<hr>
+		<!-- 超链接标签：a 
+		href：设置跳转的链接地址
+		-->
+		<a href="http://www.tencent.com">腾讯网</a>
+		<a href="">ook</a>
+		
+		<!-- 有序列表和无序列表 -->
+		<!-- ol会自动生成序号 -->
+		<ol>
+			<li>python</li>
+			<li>java</li>
+			<li>php</li>
+			<li>go</li>
+			<li>c++</li>
+		</ol>
+		<!-- 无序列表 -->
+		<ul>
+			<li>python</li>
+			<li>java</li>
+			<li>php</li>
+			<li>go</li>
+			<li>c++</li>
+		</ul>
+		
+		<hr>
+		<!-- 表格标签 -->
+		<table border="1">
+			<!-- 表头行 -->
+			<tr>
+				<!-- 表头行的列 -->
+				<th>姓名</th>
+				<th>年龄</th>
+				<th>性别</th>
+				<th>职业</th>
+			</tr>
+			<!-- 内容行 -->
+			<tr>
+				<td>test</td>
+				<td>18</td>
+				<td>男</td>
+				<td>IT</td>
+			</tr>
+			<tr>
+				<td>test1</td>
+				<td>18</td>
+				<td>男</td>
+				<td>IT</td>
+			</tr>
+			<tr>
+				<td>test2</td>
+				<td>18</td>
+				<td>男</td>
+				<td>IT</td>
+			</tr>
+		</table>
+		<hr>
+		<!-- iframe标签 
+		在页面中嵌套别的网页
+		src:嵌套页面的地址
+		width:100px
+		height:100px
+		-->
+		<iframe src="http://www.taobao.com" width="500px" height="500px"></iframe>
+		<iframe src="http://test.com" frameborder="0"></iframe>
+	
+	
+	</body>
+</html>
