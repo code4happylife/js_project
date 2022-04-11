@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<h1>注册页面</h1>
+		<hr>
+		<form action="">
+			<div>
+			用户昵称：<input type="text" name="user" required>
+			</div>
+			<div>密码：<input type="password" name="pwd"></div>
+			<!-- 单选框 -->
+			<div>性别：
+			男<input type="radio" name="sex" value=1>
+			女<input type="radio" name="sex" value=2>
+			<!-- 多选框 -->
+			<div>
+				技能：
+				python 	<input type="checkbox" name='kill' value="py">
+				java 	<input type="checkbox" name="kill" value="java">
+				php 	<input type="checkbox" name="kill" value="php">
+				go 	<input type="checkbox" name="kill" value="go">
+			</div>
+			
+			<!-- 日期选择框 -->
+			<div>
+				出生日期：<input type="date" name="date">
+			</div>
+			<!-- 颜色选择框 -->
+			<div>
+				喜欢的颜色<input type="color">
+			</div>
+			
+			<!-- 文件上传 -->
+			<div>
+				<input type="file" name="pic">
+			</div>
+			
+			<!-- 普通按钮 -->
+			<!-- <input type="button" value="按钮111"> -->
+			<button>按钮222</button>
+			<!-- 表单重置 -->
+			<input type="reset">
+			
+			<!-- 使用图片作为按钮 -->
+			<input type="image">
+			
+			<!-- 设置隐藏的表单项，例如django的CSRF token,默认每次都会请求都会加上这个参数 -->
+			<input type="hidden" name='key' value="11223344">
+			
+			<!-- input的其他属性 
+			
+			readonly 只读不能输入修改
+			disabled 禁用
+			required 设置为必填
+			-->
+			
+			<div>
+				<input type="text" placeholder="请输入账号">
+				<input type="text" readonly value="1234567890">
+				<input type="number" name="n">
+			</div>
+			
+			<!-- 大文本输入框 -->
+			
+			<div>
+				个人介绍
+				<textarea rows="10" cols="50" disabled></textarea>
+				
+			</div>
+			
+			
+			<!-- 选择下拉选择框 -->
+			<div>
+				城市所在地区<select name="city" id="">
+					<option value ="cs">长沙</option>
+					<option value ="bj">北京</option>
+					<option value ="sh">上海</option>
+					<option value ="sz">深圳</option>
+					<option value ="gz">广州</option>
+				</select>
+			</div>
+			
+			
+			
+			<!-- 表单提交 -->
+			
+			<div><input type="submit"></div>
+		</form>
+		
+	</body>
+</html>
