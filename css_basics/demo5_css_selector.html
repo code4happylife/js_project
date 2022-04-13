@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title></title>
+	<style type="text/css">
+	/* 标签选择器 标签名 */
+		div{
+			width: 100px;
+			height: 100px;
+			background: red;
+			border: solid 3px #35f437;
+		}
+		/* id选择器：#id属性值 */
+		/* 在同一个html页面中id值要是唯一的 */
+		/* 这是一种约定的编码规范 */
+		#box1{
+			background: yellow;
+		}
+		/* 类选择器 */
+		.test{
+			background: green;
+		}
+		/* 属性选择器 */
+		/* 只要含有对应的属性名即可被选择器选中 */
+		div[name]{
+			background: blue;
+		}
+		div[fortest]{
+			background: #00FFFF;
+		}
+		/* 伪类选择器 */
+		#box1:hover{
+			background: #0000FF;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<div id='box1'>python</div>
+	<div class="test"> java</div>
+	<div>php</div>
+	<div name="888">test</div>
+	<div fortest="999">test for fun</div>
+	
+
+	
+</body>
+</html>
