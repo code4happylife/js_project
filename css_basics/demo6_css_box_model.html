@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>css盒模型</title>
+		<style type="text/css">
+		.box1{
+			/* 元素的宽和高 */
+			width: 100px;
+			height: 100px;
+			/* 内边距 */
+			/* padding: 10px; */
+			/* padding:20px 10px; */
+			
+			/* padding: 10px 5px 20px 30px; 上 右 下 左*/
+			padding-left: 10px;
+			padding-top: 10px;
+			padding-bottom: 10px;
+			/* 边框线 */
+/* 			border: solid 2px #0000FF;
+ */			/* border-top:solid 1px #0000FF; */
+			/* border-left: solid 1px #0000FF; */
+			/* 设置圆角弧度 */
+			border-radius: 10px;
+			
+			
+			
+			/* 外边距 */
+			margin: 20px;
+			
+			/* 利用margin让元素页面居中显示 auto 平均分配*/
+			margin: 0 auto;
+			/* 让盒子内的内容水平和垂直居中 */
+			text-align: center;
+			/* line-height的大小包括字体和整个元素的大小 */
+			line-height: 100px;
+			/* 盒子的阴影 
+			参数1：x 轴上的偏移
+			参数2：y轴上的偏移
+			参数3：阴影大小
+			参数4：阴影颜色
+			
+			
+			*/
+			box-shadow: 0 0 5px #0000FF;
+		}
+
+		.box2{
+			width: 100px;
+			height: 100px;
+			/* box-shadow: 0 0 5px #0000FF x方向的偏移，y方向的偏移 
+			阴影的大小 阴影的颜色
+			*/
+			box-shadow: 0 0 5px #0000FF;
+			/* 自动根据内容的长度决定是否生成滚动条或者隐藏 */
+			/* overflow: auto; */
+			/* overflow: hidden; */
+			overflow-y: auto;
+			overflow-x: hidden;
+			
+		}
+		</style>
+	</head>
+	<body>
+		<div class="box1">
+			python 
+		</div>
+		
+		
+		<div class="box2">
+			噜啦啦噜啦啦噜啦啦噜啦啦噜啦啦噜啦啦噜啦啦噜啦啦噜啦啦噜啦啦噜啦啦噜啦啦噜啦啦噜啦啦噜啦啦噜啦啦噜啦啦噜啦啦噜啦啦噜啦啦噜啦啦噜啦啦
+		</div>
+	</body>
+</html>
