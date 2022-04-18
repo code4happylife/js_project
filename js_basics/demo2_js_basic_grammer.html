@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>js grammer</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			//单行注释
+			/*
+			多行注释
+			
+			*/
+			// js中的变量声明关键字 var let const
+			/*
+			var 声明变量 var a 
+			let 声明块级作用域内的变量{ }
+			const 声明常量（定义之后不能修改变量的值，声明时必须赋值）
+			注意点 var 和 let 在声明变量时可以不给变量赋值
+			*/
+			var name
+			name = 'testname'
+			// 条件语句
+			var n = 79
+			if (n > 90) {
+				// 条件成立的代码体
+				console.log('成绩很好')
+			} else if (n > 80) {
+				console.log('成绩还可以')
+			} else if (n > 70) {
+				console.log('成绩一般')
+			} else {
+				console.log('不及格')
+			}
+
+			/*
+			switch 变量{
+				case 'python':
+					//执行的代码
+					break
+				case 'java':
+					//执行的代码
+					break
+				default:
+					//条件都未匹配，默认执行的结果
+				
+			}
+			
+			*/
+
+			//js 函数的定义：function
+			// 定义的参数和传入的参数可以不一样
+			function work1(name, age = 20) {
+				console.log('参数name', name)
+				console.log('参数age', age)
+				//arguments：获取函数接收到的所有参数
+				console.log('arguments的值', arguments)
+				return "999"
+			}
+
+
+			/**
+			 * work1('test',18,'python')
+				demo2_js的基本语法.html:56 参数name test
+				demo2_js的基本语法.html:57 参数age 18
+				demo2_js的基本语法.html:59 arguments的值 
+			 * 
+			 * 
+			 * 
+			 * 
+			 * */
+
+
+
+
+
+
+			/*
+			work1('test',18)
+			demo2_js的基本语法.html:55 参数name test
+			demo2_js的基本语法.html:56 参数age 18
+			undefined
+			work1()
+			demo2_js的基本语法.html:55 参数name undefined
+			demo2_js的基本语法.html:56 参数age undefined
+			undefined
+			work1('test',18,'python')
+			demo2_js的基本语法.html:55 参数name test
+			demo2_js的基本语法.html:56 参数age 18
+			undefined
+			work1('ok')
+			demo2_js的基本语法.html:55 参数name ok
+			demo2_js的基本语法.html:56 参数age 20
+			
+			*/
+
+			//js中的对象, 类似于python中的字典+对象
+			var objA = {
+				name: 'test',
+				age: 18,
+				work1: function() {
+					console.log('----work1---方法')
+				},
+				work2: function(a, b) {
+					console.log('----work2---方法', a + b)
+					return a + b
+				},
+				work3() {
+					console.log('---work3----方法')
+				}
+			}
+			//js中属性的访问
+			//1. 对象.属性
+			console.log(objA.name)
+
+			//2.对象['属性']
+			console.log(objA['name'])
+			objA.work1()
+			objA.work2()
+			objA.work3()
+			/**
+			 * js的函数不要求严格按照形参传入参数
+			 * test
+				demo2_js的基本语法.html:119 test
+				demo2_js的基本语法.html:104 ----work1---方法
+				demo2_js的基本语法.html:107 ----work2---方法 NaN
+				demo2_js的基本语法.html:111 ---work3----方法
+			 * 
+			 * 
+			 * 
+			 * 
+			 * 
+			 * */
+
+			// 下面这些代码可以在浏览器的console窗口中被浏览器解释执行
+			/*
+			
+			  // 使用typeof()查看变量的类型，如string,boolean,number	
+	  11+'9'
+	  '119'
+	  var n=100
+	  undefined
+	  var f = 99.78
+	  undefined
+	  typeof(n)
+	  'number'
+	  typeof(f)
+	  'number'
+	  
+
+	  var ss = 'python nihao'
+	  undefined
+	  typeof ss
+	  'string'
+	  var t = true
+	  undefined
+	  t
+	  true
+	  var t2 = false
+	  undefined
+	  typeof t
+	  'boolean'
+	  typeof t2
+	  'boolean'
+	  
+	  var aa
+	  undefined
+	  aa
+	  undefined
+	  var n = null
+	  undefined
+	  n
+	  null
+	  
+	  
+	  
+	  
+	  // js数组
+	  var li = [11,22,33,44,55]
+	  undefined
+	  li
+	  (5) [11, 22, 33, 44, 55]0: 111: 222: 333: 444: 55length: 5[[Prototype]]: Array(0)
+	  li[0]
+	  11
+	  li[1]
+	  22
+	  li[2]
+	  33
+	  li[2:5]
+	  VM977:1 Uncaught SyntaxError: Unexpected token ':'
+	  li.slice(0,2)
+	  (2) [11, 22]0: 111: 22length: 2[[Prototype]]: Array(0)
+	  // 通过push（）和 pop（）方法可以往数组添加元素和删除元素
+	  li.push('999')
+	  6
+	  li
+	  (6) [11, 22, 33, 44, 55, '999']
+	  li.pop()
+	  '999'
+	  li.pop()
+	  55
+	  li.pop()
+	  44
+	  li
+	  (3) [11, 22, 33]
+	  li.length
+	  3
+	  
+	  // 通过new Array的方式声明数组变量
+	  var li2 = new Array()
+	  undefined
+	  li2
+	  []
+	  var li2 = new Array([11,22,33])
+	  undefined
+	  li2
+	  var aa = new Array(1,2,3)
+	  undefined
+	  aa
+	  (3) [1, 2, 3]0: 11: 22: 3length: 3[[Prototype]]: Array(0)
+
+		// js的加减乘除
+		88+1
+		89
+		88/2
+		44
+		88*2
+		176
+		// js的++ 和 --
+		var number = 1
+		undefined
+		number ++
+		1
+		number
+		2
+		number++
+		2
+		number
+		3
+		
+		
+		
+		number = 1
+		1
+		number--
+		1
+		number
+		0
+		number--
+		0
+		number
+		-1
+		
+		// js的==和===运算的区别
+		a = 99
+		99
+		b  = '99'
+		'99'
+		a==b
+		true
+		a===b
+		false
+		
+		
+		// js的&& || !的逻辑运算
+		9>2 && 8>2
+		true
+		9>2 && 8>21
+		false
+		9>2 || 8>21
+		true
+		! 8>2
+		false
+		
+	  */
+		</script>
+
+	</body>
+</html>
