@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>js对象和json字符串之间的转换</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var objA = {
+				name: "test",
+				age: 18
+			}
+			// 将js对象转换为json数据
+			var jsonStr = JSON.stringify(objA)
+			console.log(jsonStr)
+
+
+			var jstr = '{"name":"test","age":18,"school":"oxford university"}'
+			//json string 转换为js对象
+			var objB = JSON.parse(jstr)
+			console.log(objB)
+			/*
+			
+			name: 'test', age: 18, school: 'oxford university'}
+			age: 18
+			name: "test"
+			school: "oxford university"
+			[[Prototype]]: Object
+			
+			*/
+			//json格式化
+			var ss =
+				'{"q":"","p":false,"bs":"","csor":"0","err_no":0,"errmsg":"","g":[{"type":"his_normal","sa":"h_1","q":"翻译"},{"type":"his_normal","sa":"h_2","q":"tinylove"},{"type":"his_normal","sa":"h_3","q":"搜索框居中行内"},{"type":"his_normal","sa":"h_4","q":"css box"},{"type":"his_normal","sa":"h_5","q":"div height width 铺满浏览器"},{"type":"his_normal","sa":"h_6","q":"div height自适应"},{"type":"his_normal","sa":"h_7","q":"昵图网"},{"type":"his_normal","sa":"h_8","q":"高清图片素材网站"},{"type":"his_normal","sa":"h_9","q":"div 设置背景图片"},{"type":"his_normal","sa":"h_10","q":"昨夜 深圳骑手"}],"queryid":"0xa0767543b42975"}'
+			var sObj = JSON.parse(ss)
+			console.log(sObj)
+			// 转换成json字符串时加上了缩进
+			ss2 = JSON.stringify(sObj, null, 4)
+			console.log(ss2)
+			/*
+			{
+			    "q": "",
+			    "p": false,
+			    "bs": "",
+			    "csor": "0",
+			    "err_no": 0,
+			    "errmsg": "",
+			    "g": [
+			        {
+			            "type": "his_normal",
+			            "sa": "h_1",
+			            "q": "翻译"
+			        },
+			        {
+			            "type": "his_normal",
+			            "sa": "h_2",
+			            "q": "tinylove"
+			        },
+			        {
+			            "type": "his_normal",
+			            "sa": "h_3",
+			            "q": "搜索框居中行内"
+			        },
+			        {
+			            "type": "his_normal",
+			            "sa": "h_4",
+			            "q": "css box"
+			        },
+			        {
+			            "type": "his_normal",
+			            "sa": "h_5",
+			            "q": "div height width 铺满浏览器"
+			        },
+			        {
+			            "type": "his_normal",
+			            "sa": "h_6",
+			            "q": "div height自适应"
+			        },
+			        {
+			            "type": "his_normal",
+			            "sa": "h_7",
+			            "q": "昵图网"
+			        },
+			        {
+			            "type": "his_normal",
+			            "sa": "h_8",
+			            "q": "高清图片素材网站"
+			        },
+			        {
+			            "type": "his_normal",
+			            "sa": "h_9",
+			            "q": "div 设置背景图片"
+			        },
+			        {
+			            "type": "his_normal",
+			            "sa": "h_10",
+			            "q": "昨夜 深圳骑手"
+			        }
+			    ],
+			    "queryid": "0xa0767543b42975"
+			}
+			
+			
+			*/
+		</script>
+
+	</body>
+</html>
