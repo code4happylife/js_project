@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			.bj {
+				width: 200px;
+				height: 200px;
+				background-color: #00FFFF;
+				border: solid 2px #000000;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="submit" id="su" value="nice">
+		<div id="s-top-left">
+			<a href="www.baidu.com">试试百度一下</a>
+		</div>
+
+		<script type="text/javascript">
+			/*
+			元素.属性=属性值
+			
+			*/
+			document.querySelector('#su').value = 'ok'
+			//获取元素属性
+			document.querySelector('#su').value
+			//修改元素样式
+			document.querySelector('#su').style.backgroundColor = 'yellow'
+
+			document.querySelector('#su').className = 'bj'
+			// 修改元素的文本, innerText只是改动文本, innerHTML会解析成html
+
+			document.querySelector('#s-top-left a').innerText = 'new'
+			document.querySelector('#s-top-left a').innerHTML = '<h1>new</h1>'
+		</script>
+	</body>
+</html>
