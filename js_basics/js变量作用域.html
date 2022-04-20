@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>js变量作用域</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*
+			var 声明变量 var a
+			let 声明块级作用域内的变量{ }
+			const 声明常量（定义之后不能修改变量的值，声明时必须赋值）
+			注意点 var 和 let 在声明变量时可以不给变量赋值
+			
+			
+			*/
+			var a = 100
+			if (a > 10) {
+				let name = 'test'
+				const age = 18
+				name = 'newname'
+				console.log("in the block:", a, age, name)
+
+			}
+			//Uncaught ReferenceError: age is not defined
+			console.log("outside the block:", a, name)
+			console.log("name", name)
+			/*
+			console.log(name)
+			VM155:1 
+			undefined
+			console.log(a)
+			VM192:1 100
+			
+			*/
+		</script>
+	</body>
+</html>
