@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>js遍历对象和数组</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			var obj = {
+				name: "test",
+				age: 18,
+				work: function test_func() {
+					console.log('hehe')
+				}
+			}
+			for (key in obj) {
+				console.log('key:', key)
+				console.log('value', obj[key])
+			}
+			// 获取所有的key
+			var keys = Object.keys(obj)
+			console.log(keys)
+			//获取所有的value
+			var values = Object.values(obj)
+			console.log(values)
+			//获取key 和 value
+			var kws = Object.entries(obj)
+			console.log('kws:', kws)
+			console.log("----------------------------")
+
+			//------------------------数组的操作方法-------------
+			arr = [11, 22, 33, 44, 55, 66, 777]
+
+			//数组的foreach方法，遍历数组，对数组进行相关的操作
+			//对数组进行批量修改
+			arr.forEach(function(item, index, array) {
+				/*
+				item 遍历出来的元素
+				index 元素的索引
+				array:被遍历的数组	
+				*/
+				console.log('item', item)
+				console.log('index:', index)
+				console.log('array:', array)
+			})
+			//数组的filter,过滤器，
+			var newArr = arr.filter(function(item, index, array) {
+				return item > 400
+			})
+			console.log('newArr after filtered:', newArr)
+			console.log('--------------------------------------------')
+			var cases = [{
+					id: 1,
+					title: "文章标题1",
+					data: 999
+				},
+				{
+					id: 2,
+					title: "文章标题2",
+					data: 888
+				},
+				{
+					id: 3,
+					title: "文章标题3",
+					data: 777
+				},
+				{
+					id: 4,
+					title: "文章标题4",
+					data: 666
+				},
+			]
+			//数组的find 方法, 查找第一个符合条件的元素，返回元素的值
+			//找出cases中id为2的用例的索引
+			var res1 = cases.find(function(item, index, array) {
+				return item.id === 2
+			})
+			console.log("符合条件的元素的值:", res1)
+
+			//数组的findIndex方法， 查找第一个符合条件的元素，返回元素的索引
+			var res2 = cases.findIndex(function(item, index, array) {
+				return item.id === 2
+			})
+			console.log("符合条件的元素的索引:", res2)
+			//==========================================================
+			console.log("============================================")
+			arr2 = [100, 200, 300, 400, 500]
+			arr2.forEach(function(item, index, array) {
+				// 这里没有使用函数形参：array，js比较灵活，可以不使用
+				console.log("元素的值:", item)
+				console.log("元素的索引", index)
+			})
+
+			objArr = [{
+				salary: 1000,
+				payCheck: 500,
+				name: "joey"
+			}, {
+				salary: 1200,
+				payCheck: 400,
+				name: "billy"
+			}, {
+				salary: 1200,
+				payCheck: 600,
+				name: "boni"
+			}, ]
+			someOne = objArr.find(function(item, index, array) {
+				return item.salary === 1200
+
+			})
+			console.log(someOne)
+		</script>
+	</body>
+</html>
