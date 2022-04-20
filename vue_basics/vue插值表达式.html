@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="https://unpkg.com/vue@next"></script>
+
+	</head>
+	<body>
+		<div id="app">
+			<!-- 插值表达式 -->
+			<h2>名字:{{name}}</h2>
+			<!-- 基础指令 -->
+			<h2 v-text='age'></h2>
+			<span v-html='desc'></span>
+			<hr>
+			<!-- v-pre显示标签中的原始内容（vue不会对标签中的内容解析） -->
+			<h2 v-pre>{{tteesstt}}</h2>
+
+		</div>
+		<script type="text/javascript">
+			var vm = Vue.createApp({
+				data() {
+					return {
+						name: 'test',
+						age: 18,
+						desc: "<b>大佬18岁</b>"
+					}
+				}
+			}).mount('#app')
+		</script>
+	</body>
+</html>
