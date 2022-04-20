@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="https://unpkg.com/vue@next"></script>
+
+	</head>
+	<body>
+		
+		<!-- 		<div class="name"></div>
+		<div class="age"></div> -->
+		<div id="box">
+			<div class="name">{{name}}</div>
+			<div class="age">{{age}}</div>
+			<h1>{{name}}</h1>
+		</div>
+
+		<!-- 原生js将数据渲染到元素中 -->
+		<!-- 		<script type="text/javascript">
+			var data = {
+				name: "test",
+				age: 18
+			}
+			document.querySelector('.name').innerText = data.name
+			document.querySelector('.age').innerText = data.age
+		</script> -->
+
+		<!-- 使用vue框架 -->
+		<script type="text/javascript">
+			// //1.定义一个vue组件（数据和js函数）
+			// const vueObj = {
+			// 	//data定义数据
+			// 	data() {
+			// 		return {
+			// 			name: "ook",
+			// 			age: 19
+			// 		}
+			// 	}
+			// }
+			// //创建一个应用实例
+			// var vm = Vue.createApp(vueObj)
+			// //将应用实例挂载到页面的元素上
+			// vm.mount('#box')
+			
+			
+			
+			//=========================
+			var vm = Vue.createApp({
+				data(){
+					return{
+						name:"ooll",
+						age:11
+					}
+				}
+			}).mount('#box')
+		</script>
+
+	</body>
+</html>
