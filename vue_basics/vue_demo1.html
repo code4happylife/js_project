@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="https://unpkg.com/vue@next"></script>
+		<script type="text/javascript">
+			function getCurrentTime() {
+
+				let dt = new Date();
+				specific_time = dt.toLocaleString();
+				return specific_time;
+
+			}
+		</script>
+
+	</head>
+	<body>
+		<div id="app">
+			<table border="1">
+				<tr>
+					<th>项目ID</th>
+					<th>项目名称</th>
+					<th>测试人员</th>
+					<th>项目</th>
+					<th>projectID</th>
+					<th>项目描述</th>
+					<th>项目创建时间</th>
+					<th>测试用例数</th>
+					<th>删除操作</th>
+
+				</tr>
+				<tr v-for='(item,index) in projectData' :key='item.id'>
+					<td>{{item.id}}</td>
+					<td>{{item.name}}</td>
+					<td>{{item.tester}}</td>
+					<td>{{item.project}}</td>
+					<td>{{item.project_id}}</td>
+					<td>{{item.desc}}</td>
+					<td>{{item.create_time}}</td>
+					<td>{{item.testcases}}</td>
+					<td><button type="button" @click='deleteRow(index)'>删除</button></td>
+
+				</tr>
+
+			</table>
+			<hr>
+			<div>项目ID: <input type="text" v-model='addForm.id'></div>
+			<div>项目名称: <input type="text" v-model='addForm.name'></div>
+			<div>测试人员: <input type="text" v-model='addForm.tester'></div>
+			<div>项目: <input type="text" v-model='addForm.project'></div>
+			<div>projectID: <input type="text" v-model='addForm.project_id'></div>
+			<div>项目描述: <input type="text" v-model='addForm.desc'></div>
+			<div>项目创建时间: <input type="text" v-model='addForm.create_time'></div>
+			<div>测试用例数: <input type="text" v-model='addForm.testcases'></div>
+			<div><button type="button" @click='addData'>添加到表格</button></div>
+			<hr>
+			<div><button type="button" @click='modifyData'>修改表格</button></div>
+
+
+
+		</div>
+		<script type="text/javascript">
+			Vue.createApp({
+
+				data() {
+					return {
+						addForm: {
+							"id": "",
+							"name": "",
+							"tester": "",
+							"project": "",
+							"project_id": "",
+							"desc": "",
+							"create_time": getCurrentTime(),
+							"testcases": "",
+						},
+						projectData: [{
+								"id": 1,
+								"name": "平台项目",
+								"tester": "tester1",
+								"project": "平台项目",
+								"project_id": 1,
+								"desc": "平台接口",
+								"create_time": "2019-11-06 14:50:30",
+								"testcases": 9,
+							},
+							{
+								"id": 2,
+								"name": "注册平台项目",
+								"tester": "tester2",
+								"project": "平台项目",
+								"project_id": 1,
+								"desc": "注册接口",
+								"create_time": "2019-11-06 14:51:00",
+								"testcases": 0,
+							},
+							{
+								"id": 3,
+								"name": "创建项目接口平台项目",
+								"tester": "tester3",
+								"project": "平台项目",
+								"project_id": 1,
+								"desc": "项目接口",
+								"create_time": "2019-11-06 14:51:45",
+								"testcases": 1,
+							},
+							{
+								"id": 4,
+								"name": "金融项目",
+								"tester": "",
+								"project": "金融项目",
+								"project_id": 2,
+								"desc": "",
+								"create_time": "2019-11-06 14:52:22",
+								"testcases": 0,
+							},
+							{
+								"id": 5,
+								"name": "金融项目",
+								"tester": "tester5",
+								"project": "金融项目",
+								"project_id": 2,
+								"desc": "",
+								"create_time": "2019-11-06 14:52:40",
+								"testcases": 0,
+							},
+							{
+								"id": 6,
+								"name": "查看项目列表接口",
+								"tester": "tester6",
+								"project": "金融项目",
+								"project_id": 2,
+								"desc": "",
+								"create_time": "2019-11-06 17:22:50",
+								"testcases": 1,
+							}
+						]
+					}
+				},
+				methods: {
+					deleteRow(rowIndex) {
+						this.projectData.splice(rowIndex, 1)
+					},
+					modifyData() {
+						/*修改数据*/
+						let newdata2 = {
+							...this.addForm
+						}
+						for (var i = 0; i < this.projectData.length; i++) {
+							if (this.projectData[i].id === Number(newdata2.id)) {
+								this.projectData[i].name = newdata2.name
+								this.projectData[i].tester = newdata2.tester
+								this.projectData[i].project = newdata2.project
+								this.projectData[i].project_id = newdata2.project_id
+								this.projectData[i].desc = newdata2.desc
+								this.projectData[i].create_time = newdata2.create_time
+								this.projectData[i].testcases = newdata2.testcases
+							}
+						}
+
+					},
+					addData() {
+						let newdata = {
+							...this.addForm
+						}
+						this.projectData.push(newdata)
+
+					}
+
+				}
+
+			}).mount('#app')
+		</script>
+
+
+	</body>
+</html>
