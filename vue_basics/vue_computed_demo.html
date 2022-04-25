@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="https://unpkg.com/vue@next"></script>
+
+	</head>
+	<body>
+		<div id="app">
+
+			<h2>价格{{price}}</h2>
+			数量<input type="text" v-model="count">
+
+			<hr>
+			<h2>总价格：{{sumPrice}}</h2>
+			<h2>折后价：{{finalPrice}}</h2>
+
+		</div>
+
+
+
+		<script type="text/javascript">
+			Vue.createApp({
+				data() {
+					return {
+						price: 9.9,
+						count: 1
+					}
+				},
+				//vue计算属性-computed 
+				//一个数据, 依赖另外一些数据计算而来的结果 场景: 一个变量的值, 需要用另外变量计算而得来
+				//这里sumPrice的值由price 和 count计算得到
+				computed: {
+					sumPrice() {
+						let res = this.price * this.count
+						return res.toFixed(2)
+					},
+					finalPrice() {
+						let res = this.price * this.count * 0.9
+						return res.toFixed(2)
+					}
+				}
+			}).mount("#app")
+		</script>
+	</body>
+</html>
