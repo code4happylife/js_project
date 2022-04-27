@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>vue生命周期钩子函数</title>
+		<script src="https://unpkg.com/vue@next"></script>
+
+	</head>
+	<body>
+		<div id="app">
+			<!-- 使用自定义的组件 -->
+			<modname></modname>
+			<yoyobox></yoyobox>
+			输入框的数据绑定:<input type="text" v-model='testdata'>
+
+		</div>
+		<!-- 如果修改输入框的数据，将会在浏览器的console控制台看到如下输出 -->
+		<!-- 
+		 ================实例对象创建之前执行的钩子函数（在实例初始化之后、进行数据侦听和事件/侦听器的配置之前同步调用）======================
+		 vue生命周期钩子函数.html:65 ================实例对象创建之后======================
+		 vue生命周期钩子函数.html:70 ===============实例挂载之前=======================
+		 vue生命周期钩子函数.html:74 ================实例挂载之后======================
+		 vue生命周期钩子函数.html:79 ===============数据变化后，DOM更新之前执行的钩子函数=======================
+		 vue生命周期钩子函数.html:84 ===============虚拟 DOM 重新渲染和更新完毕之后被执行的钩子函数=======================
+		 -->
+		<script type="text/javascript">
+			//定义组件对象
+			const testmod = {
+				template: `
+				<hr>
+					<h1>这个测试标签{{title}}</h1>
+					
+				<hr>
+				
+				`,
+				data() {
+					return {
+						title: "大佬"
+					}
+				}
+			}
+
+			const yoyo = {
+				template: `
+					<hr>
+					<h1>yoyo{{title}}</h1>
+					<modname></modname>
+					
+					<hr>
+					
+					
+				
+				`,
+				data() {
+					return {
+						title: "学习是很快乐的啊"
+					}
+				}
+			}
+
+			//注册组件
+
+			compA = {
+				data() {
+					return {
+						testdata: 10
+					}
+				},
+				methods: {},
+				beforeCreate() {
+					console.log("================实例对象创建之前执行的钩子函数（在实例初始化之后、进行数据侦听和事件/侦听器的配置之前同步调用）======================")
+				},
+				created() {
+					console.log("================实例对象创建之后======================")
+
+				},
+				//实例挂载之前执行的钩子函数
+				beforeMount() {
+					console.log("===============实例挂载之前=======================")
+
+				},
+				mounted() {
+					console.log("================实例挂载之后======================")
+
+				},
+				//data中的数据发生变化，DOM被更新之前执行的钩子函数
+				beforeUpdate() {
+					console.log("===============数据变化后，DOM更新之前执行的钩子函数=======================")
+
+				},
+				//修改之后执行的钩子函数
+				updated() {
+					console.log("===============虚拟 DOM 重新渲染和更新完毕之后被执行的钩子函数=======================")
+
+				},
+				// vue实例销毁之前执行
+				beforeUnmount() {
+					console.log("======================================")
+
+				},
+				// vue实例销毁之后执行
+				unmounted() {
+					console.log("======================================")
+
+				},
+				//组件内部注册（局部组件）, 只能在注册的组件中使用
+				components: {
+					'yoyobox': yoyo
+				}
+
+			}
+			//compA是根组件
+			app = Vue.createApp(compA)
+			//注册为全局组件 ，在所有的组件中都可以直接使用	app.component('组件名字 ', 组件对象)
+			app.component('modname', testmod)
+			//注册为局部组件
+
+
+			app.mount("#app")
+		</script>
+	</body>
+</html>
