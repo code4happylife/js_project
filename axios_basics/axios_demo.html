@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+		
+	</head>
+	<body>
+		<!-- http://127.0.0.1:8000/users/ -->
+		<script type="text/javascript">
+			//使用axios发送post请求
+			const login_url = 'http://localhost:8000/users/'
+			const params = {
+				username:"admin2",
+				password:"password123"
+			}
+      //TODO: 需要考虑跨域问题
+			//发送post请求, json格式的参数
+			const res = axios.post(login_url,params)
+			//获取结果
+			//console.log(res) res是promise对象（异步对象）
+			res.then(function(response){
+				console.log('------2-----------')
+				console.log('响应体：',response)
+				console.log('------3-----------')
+			})
+			console.log("-----------1----------------")
+			//查询字符串参数，表单参数
+		</script>
+	</body>
+</html>
