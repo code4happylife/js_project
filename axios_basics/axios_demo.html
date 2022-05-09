@@ -16,7 +16,7 @@
 				username:"admin2",
 				password:"password123"
 			}
-      //TODO: 需要考虑跨域问题
+      //TODO: 需要考虑跨域问题--后端接口设置CORS_ORIGIN_ALLOW_ALL = True
 			//发送post请求, json格式的参数
 			const res = axios.post(login_url,params)
 			//获取结果
