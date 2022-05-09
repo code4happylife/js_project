@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+</head>
+<body>
+
+<script type="text/javascript">
+    const http2 = axios.create({
+        baseURL: 'http://127.0.0.1:8000',
+        validateStatus: function (status) {
+            return status < 500;
+        },
+    });
+
+    //发送get 请求
+    async function getApiList() {
+        const queryPath = '/',
+
+            queryParams = {
+                username: "admin2",
+                password: "password123"
+            }
+        const response = await http2.get(queryPath, {
+            params: queryParams
+        })
+        console.log(response);
+        console.log("----------this is request for getApiList")
+
+    }
+    getApiList()
+
+</script>
+</body>
+</html>
